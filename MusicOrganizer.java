@@ -59,6 +59,8 @@ public class MusicOrganizer
     {
         for(String filename : files) {
             System.out.println(filename);
+            //String position = files.get(index);
+            //System.out.println(position + ": " + filename);
         }
     }
     
@@ -131,4 +133,27 @@ public class MusicOrganizer
         }
         return valid;
     }
+    /**
+     * Lits the names of files matching the given serach string.
+     * @param searchString The string to match.
+     */
+    public void listMatching(String searchString)
+    {
+        boolean valid;
+        
+        for(String filename : files) {
+            if(filename.contains(searchString)) {
+                //A match.
+                System.out.println(filename);
+                valid = true;
+            }
+            else if(!(filename.contains(searchString))){
+                System.out.println("Can't find realated search.");
+                valid = false;
+            }
+            else{
+                valid = true;
+            }
+        }
+    } 
 }
